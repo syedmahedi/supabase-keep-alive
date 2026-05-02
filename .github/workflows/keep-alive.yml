@@ -10,8 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Ping Supabase
+      - name: Ping Portfolio
         run: |
           curl -X GET "https://uvaopvkqpevecrfncwsu.supabase.co/rest/v1/site_settings?select=id&limit=1" \
-          -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
-          -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}"
+          -H "apikey: ${{ secrets.SUPABASE_KEY_PORTFOLIO }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY_PORTFOLIO }}"
+      - name: Pink Dokani
+        run: |
+          curl -X GET "https://mamudqbsskclsehwjzmy.supabase.co/rest/v1/shops?select=id&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_KEY_DOKANI }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY_DOKANI }}"
+        
